@@ -1,0 +1,25 @@
+<mat-card [class.completed]="task().status === 'Concluída'">
+  <mat-card-content>
+    <div class="task-content">
+      <div class="task-header">
+        <mat-checkbox [checked]="task().status === 'Concluída'"
+          (change)="toggle.emit()">
+          <div class="task-info">
+            <span class="title">{{ task().title }}</span>
+            <div class="tags">
+              <mat-chip [class]="task().priority.toLocaleLowerCase()">
+                {{ task().priority }}
+              </mat-chip>
+            </div>
+          </div>
+          <button mat-icon-button color="warn" (click)="delete.emit()">
+            <mat-icon>delete</mat-icon>
+
+          </button>
+        </mat-checkbox>
+      </div>
+    </div>
+  </mat-card-content>
+
+
+</mat-card>

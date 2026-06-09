@@ -1,0 +1,40 @@
+<div class="add-task-form">
+  <mat-form-field appearance="fill">
+    <mat-label>Nova Tarefa</mat-label>
+    <input #taskInput matInput [(ngModel)]="newTaskTitle" (keyup.enter)="addTask()" placeholder="O que precisa ser feito?"/>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Prioridade</mat-label>
+    <mat-select [(ngModel)]="newTaskPriority">
+
+      @for(priority of priorities; track priority){
+        <mat-option [value]="priority">
+          {{ priority }}
+        </mat-option>
+
+      }
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addTask()"[disabled]="!newTaskTitle">
+    <mat-icon>add</mat-icon>
+    Adicionar
+  </button>
+</div>
+
+<div class="list-container">
+  @for (task of getAllTasks(); track task.id) {
+    <app-task-item
+      [task]="task"
+      (toggle)="toggleTaskStatus(task.id)"
+      (delete)="deleteTask(task.id)"
+    ></app-task-item>
+
+  }@empty{
+    <div class="empty-state">
+      <mat-icon>
+        assignment_turned_in
+      </mat-icon>
+      <p>Sem tarefas no momento! Adicione uma nova tarefa para começar.</p>
+    </div>
+  }
+</div>

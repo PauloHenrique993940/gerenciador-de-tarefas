@@ -55,6 +55,7 @@ export class TaskService {
       priority,
       status: 'Pendente',
       createdAt: new Date(),
+      description: undefined
     };
 
     this.taskSignal.update(tasks=> [newTask, ...tasks]);

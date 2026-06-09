@@ -2,6 +2,7 @@ export type TaskPriority  = 'Baixa' | 'Média' | 'Alta';
 export type TaskStatus = 'Pendente' | 'Concluída';
 
 export interface Task {
+description: any;
   id: string;
   title: string;
   priority: TaskPriority;

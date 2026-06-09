@@ -1,0 +1,28 @@
+.add-task-form{
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+
+
+mat-form-field{
+  flex: 1;
+}
+
+
+.empty-state{
+  text-align: center;
+  padding: 48px;
+  color: #888;
+
+
+}
+
+
+.empty-state mat-icon{
+  margin-bottom: 48px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}

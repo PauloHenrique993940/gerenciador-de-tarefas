@@ -1,0 +1,27 @@
+.container{
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+
+.stats-placeholder {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  background-color: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
+  font-style: italic;
+
+}
+
+
+mat-toobar{
+  display: flex;
+  gap:12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
